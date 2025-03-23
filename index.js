@@ -11,7 +11,6 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-// Sử dụng userRoutes
 app.use("/api/users", userRoutes);
 
 const PORT = process.env.PORT || 5000;

@@ -1,6 +1,6 @@
 const User = require("../models/User");
 
-// 📌 Lấy tất cả user
+
 const getUsers = async (req, res) => {
   try {
     const users = await User.find();
@@ -10,7 +10,7 @@ const getUsers = async (req, res) => {
   }
 };
 
-// 📌 Thêm user mới
+
 const createUser = async (req, res) => {
   const { name, email, password } = req.body;
   try {
@@ -22,7 +22,6 @@ const createUser = async (req, res) => {
   }
 };
 
-// 📌 Cập nhật user
 const updateUser = async (req, res) => {
   try {
     const updatedUser = await User.findByIdAndUpdate(req.params.id, req.body, { new: true });
@@ -32,7 +31,6 @@ const updateUser = async (req, res) => {
   }
 };
 
-// 📌 Xóa user
 const deleteUser = async (req, res) => {
   try {
     await User.findByIdAndDelete(req.params.id);
